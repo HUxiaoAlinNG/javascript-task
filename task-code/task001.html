@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS基础单元作业2</title>
+</head>
+<body>
+<script type="text/javascript"> 
+	var jerry = parseQuery("name=jerry&age=1"); 
+	var tom = parseQuery("name= tom &age=12&gender&");
+	function parseQuery(query){
+    var reg = /([^&\s=]+)[\s=]*([^&\s=]*)/g;  //[^&\s=]+ 查找非&、非空白格、非等号的字符；[\s=]*查找空白格、等号的字符；
+    var obj={};
+    while(reg.exec(query)){      //reg.exec(query)检索query中指定的值，返回查找的值并确认位置
+    	 obj[RegExp.$1] = RegExp.$2; //以数组形式返回匹配值；obj[匹配的第1个子表达式]=匹配的第2个子表达式
+    }
+    return obj;   //返回检索后的对象
+}
+    console.log(jerry);
+	console.log(tom);
+
+//     function parseQuery(query){
+//     var args = {};
+//     var items = query.split("&");
+ 
+//     var item = null, name = null, value = null;
+//     for(var i=0; i < items.length; i++){
+//         item = items[i].split("=");
+//         if(item[0]){
+//             name = item[0];
+//             value = item[1] ? item[1] : "";
+//             args[name] = value;
+//         }
+//     }
+//     return args;
+// }
+// console.log(parseQuery("name=jerry&age=1&gender&"));
+// console.log(parseQuery("name=tom&age=12"));
+</script>
+</body>
+</html>

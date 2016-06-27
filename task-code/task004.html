@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS基础单元作业5</title>
+</head>
+<body>
+<script type="text/javascript">
+    var a=escapeHTML('<div>Tom&Jerry</div> '); 
+    var b=escapeHTML('<input type="text" name="mobile"> '); 
+	function escapeHTML(htmlStr) {
+    var obj = {     //可根据实际需求增删obj里面变量(转义字符)
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        '"': '&quot;',
+    };
+    return String(htmlStr).replace(/[<>&"]/g, function (i) {
+        return obj[i];   //引用obj
+    });
+}
+   console.log(a);	
+   console.log(b);
+</script>
+</body>
+</html>

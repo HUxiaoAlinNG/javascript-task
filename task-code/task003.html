@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS基础单元作业4</title>
+</head>
+<body>
+<script type="text/javascript">
+function Person(name,age){
+this.name=name;  //定义Person的name属性
+this.age=age;    //定义Person的age属性
+//定义Person的introduce方法
+this.introduce=function(){
+alert('\"I am '+name+','+' I am '+age+' years old!\"')
+}
+}
+var jerry=new Person('Jerry',2);
+jerry.introduce();
+var tom=new Person('Tom',12);
+tom.introduce();
+</script>
+</body>
+</html>

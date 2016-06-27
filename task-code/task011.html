@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JStest3</title>
+</head>
+<body>
+<script type="text/javascript">
+function formatDate(date,pattern) {
+  	var vardate= {
+    	year:date.getFullYear(),
+   	 	month:date.getMonth()<10?'0'+(date.getMonth()+1):(date.getMonth()+1) ,
+    	day:date.getDate()<10?'0'+date.getDate():date.getDate(),
+    	hours:date.getHours()<10?'0'+date.getHours():date.getHours(),
+   		minutes:date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes(),
+    	seconds:date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds()
+  	};
+  	var result;
+  	switch(pattern){
+   	 	case "yyyy":
+      	result = vardate.year;
+      	break;
+    	case "yyyy-MM-dd":
+      	result= vardate.year+'-'+vardate.month+'-'+vardate.day;
+      	break;
+    	case "yyyy-MM-dd HH":
+      	result= vardate.year+'-'+vardate.month+'-'+vardate.day+' '+vardate.hours;
+      	break;
+    	case "yyyy-MM-dd HH:mm:ss":
+      	result = vardate.year+'-'+vardate.month+'-'+vardate.day+' '+vardate.hours+':'+vardate.minutes+':'+vardate.seconds;
+      	break;
+  	}
+  	return result;
+}
+	var date = new Date(2001, 8, 11, 8, 26, 8);
+	console.log(formatDate(date, "yyyy"));     
+	console.log(formatDate(date, "yyyy-MM-dd"));        
+	console.log(formatDate(date, "yyyy-MM-dd HH"));       
+	console.log(formatDate(date, "yyyy-MM-dd HH:mm:ss"));
+</script>
+</body>
+</html>

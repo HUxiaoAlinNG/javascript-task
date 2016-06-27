@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS基础单元作业3</title>
+</head>
+<body>
+<script type="text/javascript">
+	function multiply() {
+	    var length = arguments.length;  //定义输入参数的数量length
+		var product = 1;  //初始化乘积为1
+		var parameter;    //定义参数
+		for (var i = 0; i < length; i++) {
+		    parameter = arguments[i];  
+		    product = product * parameter;  
+		}
+		    return product;
+	}
+
+	alert(multiply(2, 3)); // 6
+	alert(multiply(-1, 3, 4)); // -12
+	alert(multiply(1,2, 3, 4, 5)); // 120
+	alert(multiply(0,2,3));  // 0
+</script>
+</body>
+</html>

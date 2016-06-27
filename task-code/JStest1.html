@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS考试作业1</title>
+</head>
+<body>
+<script type="text/javascript">
+function myType(param){    
+    if(typeof param=="object")
+    {
+        if((Object.prototype.toString.call(param).slice(8,-1))=="Object")
+        {
+        return "object";
+        }
+        else
+        {
+        return Object.prototype.toString.call(param).slice(8,-1);
+        }
+    }
+    else
+    {
+    return typeof param;
+    }
+}
+	console.log(myType(1));// number
+	console.log(myType(false));// boolean
+	console.log(myType({}));// object
+	console.log(myType([]));// Array
+	console.log(myType(function(){}));// function 
+	console.log(myType(new Date()));// Date
+</script>
+</body>
+</html>

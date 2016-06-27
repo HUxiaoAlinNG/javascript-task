@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JStest2</title>
+</head>
+<body>
+<script type="text/javascript">
+function search(arr, num, first, last){
+    var last = last||arr.length - 1,
+        first = first||0;
+    var mid = Math.floor((first + last) / 2);  //二分查找法，将数组分为左数组和右数组
+    if(arr[mid] == num){  //将数组中间位置记录的关键字与查找关键字比较，如果两者相等，则查找成功
+        return mid;
+    }
+    if(num < arr[mid]){   //进一步查找左数组
+        return search(arr, num, 0, mid-1);
+    }else{            //进一步查找右数组
+        return search(arr, num, mid+1, last);
+    }
+    return false;
+}
+	var arr = [1, 2, 4, 6, 7, 9, 19,20, 30, 40, 45, 47];
+	console.log(search(arr,45));  //10
+</script>
+</body>
+</html>
